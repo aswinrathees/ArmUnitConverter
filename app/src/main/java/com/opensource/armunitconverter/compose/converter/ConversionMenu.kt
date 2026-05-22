@@ -24,6 +24,7 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.toSize
 import com.opensource.armunitconverter.data.Conversion
@@ -98,4 +99,16 @@ fun ConversionMenu(
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ConversionMenuPreview() {
+    val list = listOf(
+        Conversion(1, "Pounds to Kilograms", "lbs", "kg", 0.453592),
+        Conversion(2, "Kilograms to Pounds", "kg", "lbs", 2.20462),
+        Conversion(3, "Yards to Meters", "yd", "m", 0.9144),
+        Conversion(4, "Meters to Yards", "m", "yd", 1.09361)
+    )
+    ConversionMenu(list = list, isLandscape = false, convert = {})
 }
